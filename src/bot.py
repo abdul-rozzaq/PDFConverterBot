@@ -1,6 +1,8 @@
 from aiogram import Bot, Dispatcher, types
 from aiogram.utils.i18n import I18n
 
+from src.storage.redis import get_redis_storage
+
 from .core import settings
 from .middlewares.i18n import CustomI18nMiddleware
 from .handlers import start, documents
@@ -10,7 +12,7 @@ from .handlers.conversion import images_to_pdf, pdf_to_image, pdf_to_word, word_
 i18n = I18n(path="src/locales", default_locale="en", domain="messages")
 
 
-dispatcher = Dispatcher()
+dispatcher = Dispatcher(storage=get_redis_storage())
 
 dispatcher.message.middleware(CustomI18nMiddleware(i18n=i18n))
 

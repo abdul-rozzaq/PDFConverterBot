@@ -6,4 +6,4 @@ from src.core import settings
 
 def get_redis_storage():
     redis = Redis.from_url(settings.REDIS_URL)
-    return RedisStorage(redis)
+    return RedisStorage(redis=redis)

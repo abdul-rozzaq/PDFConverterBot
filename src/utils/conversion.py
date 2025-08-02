@@ -17,8 +17,10 @@ async def convert_pdf_to_docx(input_path: str, output_path: str):
 
 def convert_docx_to_pdf(input_path: Path, output_path: Path) -> bool:
     try:
-        subprocess.run(["libreoffice", "--headless", "--convert-to", "pdf", "--outdir", str(output_path.parent), str(input_path)], check=True)
-
+        subprocess.run(
+            ["libreoffice", "--headless", "--convert-to", "pdf", "--outdir", str(output_path.parent), str(input_path)],
+            check=True,
+        )
         return output_path.exists()
 
     except subprocess.CalledProcessError:

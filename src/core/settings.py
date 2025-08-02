@@ -7,7 +7,7 @@ env = Env()
 env.read_env()
 
 BOT_TOKEN: str = env.str("BOT_TOKEN")
-REDIS_URL: str = env.str("REDIS_URL", default="redis://localhost:5432/0")
+REDIS_URL: str = env.str("REDIS_URL", default="redis://localhost:6379/0")
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 

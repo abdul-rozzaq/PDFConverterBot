@@ -5,6 +5,7 @@ from aiogram import Router, F, Bot
 from aiogram.types import Message, BufferedInputFile
 from aiogram.fsm.context import FSMContext
 from aiogram.utils.i18n import gettext as _
+from anyio import Path
 from src.core import settings
 
 
@@ -15,7 +16,7 @@ from src.utils.conversion import convert_docx_to_pdf
 
 router = Router()
 
- 
+
 @router.message(WordToPDFState.waiting_for_word, F.document.mime_type == "application/vnd.openxmlformats-officedocument.wordprocessingml.document")
 async def process_word_to_pdf(message: Message, state: FSMContext, bot: Bot):
     await message.answer(_("Fayl qayta ishlanmoqda..."))
@@ -24,7 +25,7 @@ async def process_word_to_pdf(message: Message, state: FSMContext, bot: Bot):
 
     file_info = await bot.get_file(document.file_id)
     file_path = settings.TEMP_DIR / generate_uniq_filename(document.file_name)
-    output_path = settings.TEMP_DIR / generate_uniq_filename(document.file_name, ".pdf")
+    output_path = settings.TEMP_DIR / (Path(file_path).stem + ".pdf")
 
     await bot.download_file(file_info.file_path, file_path)
 
