@@ -4,7 +4,7 @@ import aiofiles
 import img2pdf
 
 from aiogram import F, Router
-from aiogram.types import Message, InputFile, BufferedInputFile
+from aiogram.types import Message, BufferedInputFile
 from aiogram.fsm.context import FSMContext
 from aiogram.utils.i18n import gettext as _
 
@@ -118,16 +118,18 @@ async def convert_to_pdf(message: Message, state: FSMContext):
 
     output_pdf = user_dir / "result.pdf"
 
+    a4_width_pt = img2pdf.mm_to_pt(210)
+    a4_height_pt = img2pdf.mm_to_pt(297)
+    layout_fun = img2pdf.get_layout_fun(pagesize=(a4_width_pt, a4_height_pt))
+
     with open(output_pdf, "wb") as f:
-        f.write(img2pdf.convert([str(p) for p in image_files]))
+        f.write(img2pdf.convert([str(p) for p in image_files], layout_fun=layout_fun))
 
     async with aiofiles.open(output_pdf, "rb") as f:
         await message.answer_document(
             document=BufferedInputFile(file=await f.read(), filename=output_pdf.name),
             caption=_("Fayl muvaffaqiyatli o'zgartirildi!"),
         )
-
-    await message.reply_document(document=InputFile(output_pdf), caption="Mana PDF faylingiz!")
 
     for file in user_dir.glob("*"):
         file.unlink()
