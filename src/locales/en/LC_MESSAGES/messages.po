@@ -1,0 +1,80 @@
+# English translations for .
+# Copyright (C) 2025 ORGANIZATION
+# This file is distributed under the same license as the  project.
+# Abdurazzoq Abdusalomov <rayyan.dev@mail.ru>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version:  1.0\n"
+"Report-Msgid-Bugs-To: rayyan.dev@mail.ru\n"
+"POT-Creation-Date: 2025-08-02 09:48+0500\n"
+"PO-Revision-Date: 2025-08-01 13:01+0500\n"
+"Last-Translator: Abdurazzoq Abdusalomov <rayyan.dev@mail.ru>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: src/handlers/documents.py:19
+msgid "Iltimos, PDF faylni yuboring. Biz uni Word formatiga o‘zgartiramiz."
+msgstr ""
+
+#: src/handlers/documents.py:29
+msgid ""
+"Iltimos, Word (.docx) faylni yuboring. Biz uni PDF formatiga "
+"o‘zgartiramiz."
+msgstr ""
+
+#: src/handlers/documents.py:39
+msgid ""
+"Iltimos, rasm yuboring (JPG yoki PNG). Bir nechta rasm yuborsangiz, "
+"barchasi bitta PDF faylga aylantiriladi."
+msgstr ""
+
+#: src/handlers/documents.py:49
+msgid ""
+"Iltimos, PDF faylni yuboring. Biz har bir sahifani alohida PNG rasmga "
+"aylantiramiz."
+msgstr ""
+
+#: src/handlers/documents.py:56
+msgid "Asosiy menyuga qaytdingiz."
+msgstr ""
+
+#: src/handlers/start.py:14
+msgid "Faylni yuboring"
+msgstr "inglizcha Faylni yuboring"
+
+#: src/handlers/conversion/pdf_to_word.py:21
+#: src/handlers/conversion/word_to_pdf.py:21
+msgid "Fayl qayta ishlanmoqda..."
+msgstr ""
+
+#: src/handlers/conversion/pdf_to_word.py:37
+#: src/handlers/conversion/word_to_pdf.py:37
+msgid "Fayl muvaffaqiyatli o'zgartirildi!"
+msgstr ""
+
+#: src/handlers/conversion/pdf_to_word.py:40
+msgid "Faylni o'zgartirishda xatolik yuz berdi. Iltimos, qayta urinib ko'ring."
+msgstr ""
+
+#: src/handlers/conversion/pdf_to_word.py:49
+#: src/handlers/conversion/word_to_pdf.py:49
+msgid "Iltimos, faqat PDF fayllarni yuboring."
+msgstr ""
+
+#: src/handlers/conversion/word_to_pdf.py:40
+msgid "Faylni o‘zgartirishda xatolik yuz berdi. Iltimos, qayta urinib ko‘ring."
+msgstr ""
+
+#: src/keyboards/common.py:8
+msgid "🔙 Orqaga"
+msgstr ""
+
+#~ msgid "Hujjat qabul qilindi: {name}"
+#~ msgstr "inglizcha Hujjat qabul qilindi: {name}"
+
